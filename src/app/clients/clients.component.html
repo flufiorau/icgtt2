@@ -3,14 +3,14 @@
 </p>
 
 
-<div class="allFilteredClients">
+<div *ngFor="let client of clients" class="allFilteredClients">
   <div class="oneOfListClients">
     <div class="thisClientAva">
-      <img src="" alt="">
+      <img src="{{client.general.avatar}}" alt="">
     </div>
     <div class="thisClientInfoPreview">
-      <p class="thisClientName">something</p>
-      <p class="thisClientJobTitle">job</p>
+      <p class="thisClientName">{{client.general.firstName}} {{client.general.lastName}}</p>
+      <p class="thisClientJobTitle">{{client.job.title}}</p>
     </div>
   </div>
 </div>
