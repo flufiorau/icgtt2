@@ -1,16 +1,38 @@
-<p>
-  clients works!
-</p>
+<div class="clientsComponent">
 
-
-<div *ngFor="let client of clients" class="allFilteredClients">
-  <div class="oneOfListClients">
-    <div class="thisClientAva">
-      <img src="{{client.general.avatar}}" alt="">
+  <div class="clientsList">
+    <input type="text" placeholder="search in clients" (keyup)="onFilter($event)">
+    <div *ngFor="let client of clients" class="allFilteredClients" (click)="selectedClient = client">
+      <div class="oneOfListClients">
+        <div class="thisClientAva">
+          <img src="{{client.general.avatar}}" alt="" width="32">
+        </div>
+        <div class="thisClientInfoPreview">
+          <p class="thisClientName">{{client.general.firstName}} {{client.general.lastName}}</p>
+          <p class="thisClientJobTitle">{{client.job.title}}</p>
+        </div>
+      </div>
     </div>
-    <div class="thisClientInfoPreview">
-      <p class="thisClientName">{{client.general.firstName}} {{client.general.lastName}}</p>
-      <p class="thisClientJobTitle">{{client.job.title}}</p>
+  </div>
+
+  <div class="clientDetailed">
+    <div *ngIf="selectedClient" class="selectedClient">
+      <img src="{{selectedClient.general.avatar}}" alt="client ava" class="selectedClientAva">
+      <div class="selectedClientInfo">
+        <div class="selectedClientGeneral">
+          <h2>{{selectedClient.general.firstName}} {{selectedClient.general.lastName}}</h2>
+        </div>
+        <div class="selectedClientJob">
+          <h3>{{selectedClient.job.title}} at {{selectedClient.job.company}}</h3>
+        </div>
+        <div class="selectedClientContact">
+          <h4>{{selectedClient.contact.email}} {{selectedClient.contact.phone}}</h4>
+        </div>
+        <div class="selectedClientAdress">
+          <h4>{{selectedClient.address.country}}</h4>
+          <h5>{{selectedClient.address.zipCode}} , {{selectedClient.address.city}}, {{selectedClient.address.street}}</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>
