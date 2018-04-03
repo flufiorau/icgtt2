@@ -1,0 +1,57 @@
+clientsComponent {
+    position: relative;
+}
+
+.clientsList,
+.clientDetailed,
+.selectedClientInfo,
+.thisClientAva,
+.thisClientInfoPreview {
+    display: inline-block;
+}
+
+.clientsList {
+    box-shadow: 0 0 7px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.clientsList input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.oneOfListClients {
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    line-height: 0.5;
+    font-size: 14px;
+}
+
+.oneOfListClients img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.oneOfListClients:hover img {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.clientDetailed {
+    box-shadow: 0 0 7px 4px rgba(0, 0, 0, 0.5);
+    margin: 8px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+}
+
+.selectedClientInfo {
+    width: calc(100% - 150px)
+}
+
+.selectedClient img {
+    vertical-align: top;
+    margin-top: 20px;
+}

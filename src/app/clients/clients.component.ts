@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
 
     onFilter(event) {
         const filterValue = event.target.value.toLowerCase();
-
+        this.selectedClient = undefined;
         this.httpService.getData()
             .subscribe((data: any) => {
                 const filteredClients = data.filter(findAnalogyInObject(filterValue));
